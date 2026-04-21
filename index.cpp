@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <fstream>
+#include<bits/stdc++.h>
 
 using namespace std;
 
 // Project: Smart Disaster Alert System
 // Created by: SUSMITA DAS KRISHNA 
 
-
-// Base Class demonstrating Inheritance and Encapsulation
 class Disaster {
 protected:
     string location;
@@ -21,9 +16,9 @@ public:
         waterLevel = wl;
         rainIntensity = ri;
     }
+    
 };
 
-// Derived Class for advanced analysis (Inheritance applied)
 class AlertSystem : public Disaster {
 public:
     void generateReport() {
@@ -35,7 +30,7 @@ public:
         cout << "Rainfall   : " << rainIntensity << " mm/hr" << endl;
         cout << "------------------------------------------" << endl;
 
-        // Logic: Disaster assessment based on multi-parameter conditions
+       
         if (waterLevel >= 12.0 && rainIntensity >= 150.0) {
             cout << "STATUS: RED ALERT (Extreme Danger)" << endl;
             cout << "ACTION: Evacuate the entire zone immediately!" << endl;
@@ -55,7 +50,7 @@ public:
         cout << "==========================================\n" << endl;
     }
 
-    // Function to save data to a file (File Handling)
+    
     void saveLog() {
         ofstream logFile;
         logFile.open("disaster_logs.txt", ios::app);
